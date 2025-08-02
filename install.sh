@@ -29,7 +29,6 @@ esac
 
 echo "[+] Building mfetch..."
 
-make
 sudo make install
 
 chmod +x mfetch
