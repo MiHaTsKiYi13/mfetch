@@ -1,9 +1,14 @@
 #!/bin/bash
 
+# Проверка существования /etc/os-release
+if [ ! -f /etc/os-release ]; then
+    echo "Cannot detect OS: /etc/os-release not found"
+    exit 1
+fi
 
-source /etc/os-release
+. /etc/os-release  # POSIX-совместимая альтернатива source
 
-echo "[+] Installing build tools..."
+echo "[+] Installing build tools for: $ID..."
 
 case "$ID" in
     arch | manjaro)
@@ -35,11 +40,14 @@ esac
 
 echo "[+] Building mfetch..."
 
-sudo make install
+# Компиляция и установка
+make || { echo "Make failed!"; exit 1; }
+
+sudo make install || { echo "Make install failed!"; exit 1; }
 
 chmod +x mfetch
 
+echo "[+] Running mfetch..."
 ./mfetch
 
-# Уведомление
-echo "mfetch is now installed!"
+echo "mfetch is now installed and ready to use!"
