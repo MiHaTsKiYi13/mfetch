@@ -9,7 +9,7 @@ case "$ID" in
     arch | manjaro)
         sudo pacman -Sy --noconfirm base-devel
         ;;
-    ubuntu | debian)
+    ubuntu | debian | kali | pop | linuxmint)
         sudo apt update && sudo apt install -y build-essential
         ;;
     fedora)
@@ -20,6 +20,12 @@ case "$ID" in
         ;;
     alpine)
         sudo apk add make gcc musl-dev
+        ;;
+    void)
+        sudo xbps-install -Sy base-devel
+        ;;
+    gentoo)
+        sudo emerge --ask sys-devel/gcc
         ;;
     *)
         echo "Unsupported distro: $ID"
