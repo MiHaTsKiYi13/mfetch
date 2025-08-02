@@ -1,5 +1,8 @@
 <p align="center"><b>mfetch</b></p>
 <p align="center">A command-line system information tool written in bash 3.2+</p>
+<p align="center">
+  <img width="1030" height="450" alt="Screenshot_20250802_131356" src="https://github.com/user-attachments/assets/158f2bb9-b260-4b0c-be8b-94d0909313a5" />
+</p>
 
 ## What is mfetch?
 
