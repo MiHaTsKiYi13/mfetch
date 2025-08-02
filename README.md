@@ -23,4 +23,4 @@ Clone the repository and run the install script:
 git clone https://github.com/MiHaTsKiYi13/mfetch.git
 cd mfetch
 chmod +x install.sh
-sudo sh install.sh
+sudo ./install.sh
